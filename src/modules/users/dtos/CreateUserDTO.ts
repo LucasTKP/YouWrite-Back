@@ -20,7 +20,7 @@ export interface verifyUserDTO {
 export interface verifyEmailDTO{
   email: string;
 }
-
+//TESTANDO
 export interface alterPasswordDTO{
   email: string;
   hash: string;
