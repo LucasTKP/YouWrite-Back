@@ -3,8 +3,8 @@ generator client {
 }
 
 datasource db {
-  provider = "mysql"
-  url      = "mysql://root:SvOsHfxl7g1V463F5vag@containers-us-west-18.railway.app:6579/railway"
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
 }
 
 model User {
