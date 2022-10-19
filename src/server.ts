@@ -29,15 +29,6 @@ app.use(
 );
 
 app.get('/', (req, res) => {
-    
-  // console.log(req.params.A)
-  // console.log(req.body)
-  // console.log(req.header)
-
-  // res.render
-  // res.json
-  // res.send
-  // res.status
   res.send("Deu certo!!!")
 })
 app.listen(process.env.Port || 3333, () => console.log("Server is running in port 3333 🚀"));
