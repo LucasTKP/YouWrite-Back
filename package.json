@@ -4,8 +4,10 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
+
     "start": "ts-node-dev --exit-child --transpile-only --ignore-watch node_modules src/server.ts",
     "build": "rimraf dist"
+
   },
   "dependencies": {
     "@prisma/client": "^3.9.0",
