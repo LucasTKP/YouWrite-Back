@@ -1,4 +1,5 @@
 import { User } from "@prisma/client";
+import { createPath } from "react-router-dom";
 import { AppError } from "../../../../errors/AppError";
 import { prisma } from "../../../../prisma/client";
 import { alterPasswordDTO, createUserDTO, selectUserByIdDTO, verifyEmailUserDTO, verifyUserDTO } from "../../dtos/CreateUserDTO";
@@ -24,10 +25,12 @@ export class UserUseCase {
 
 
     // Criar o usuário
-  async createUser({ name, email, hash}: createUserDTO): Promise<User> {
+  async createUser({ name, cpf, cep, email, hash}: createUserDTO): Promise<User> {
     const user = await prisma.user.create({
       data: {
         name: name,
+        cpf: cpf,
+        cep: cep,
         email: email,
         password: hash,
       },
