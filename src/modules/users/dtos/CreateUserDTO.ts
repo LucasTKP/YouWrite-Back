@@ -2,6 +2,8 @@ export interface createUserDTO {
   name: string;
   email: string;
   hash: string;
+  cep: string;
+  cpf: string;
 }
 
 export interface verifyEmailUserDTO{
