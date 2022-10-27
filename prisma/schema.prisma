@@ -3,18 +3,20 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
-  url      = env("DATABASE_URL")
+  provider = "sqlserver"
+  url = env("DATABASE_URL")
+  shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
 }
+
 
 model User {
   id         Int      @id @default(autoincrement())
   name       String
-  cpf String
-  cep String
+  cpf        String
+  cep        String
   email      String      @unique
   password   String
-  posts Products[]
+  // posts Products[]
   created_at DateTime    @default(now())
   updated_at DateTime    @updatedAt
   @@map("users")
@@ -25,8 +27,9 @@ model Products {
   name String @unique
   description String
   filter String
-  price Int
-  author User @relation(fields: [user_id], references: [id])
-  user_id Int
+  price Decimal
+  url_picture String
+  // author User @relation(fields: [user_id], references: [id])
+  // user_id Int
 }
 

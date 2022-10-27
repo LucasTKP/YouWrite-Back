@@ -1,9 +1,9 @@
 import { User } from "@prisma/client";
 import { createPath } from "react-router-dom";
-import { AppError } from "../../../../errors/AppError";
-import { prisma } from "../../../../prisma/client";
-import { alterPasswordDTO, createUserDTO, selectUserByIdDTO, verifyEmailUserDTO, verifyUserDTO } from "../../dtos/CreateUserDTO";
-const SMTP_CONFIG = require ("../../../../smtp")
+import { AppError } from "../../errors/AppError";
+import { prisma } from "../../prisma/client";
+import { alterPasswordDTO, createUserDTO, selectUserByIdDTO, verifyEmailUserDTO, verifyUserDTO } from "./dtos";
+const SMTP_CONFIG = require ("../../smtp")
 const nodemailer = require ('nodemailer')
 var bcrypt = require('bcryptjs');
 
