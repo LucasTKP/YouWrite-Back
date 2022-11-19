@@ -15,6 +15,8 @@ export class UserUseCase {
             email,
           },
         });
+
+        console.log(userAlreadyExists)
         if (userAlreadyExists) {
           throw new AppError("This email has already been registered!");
         }
@@ -52,7 +54,7 @@ export class UserUseCase {
   async verifyUserLogin({email, password}: verifyUserDTO){
     const user = await prisma.user.findUnique({
       where: {
-        email,
+        email
       },
     });
 

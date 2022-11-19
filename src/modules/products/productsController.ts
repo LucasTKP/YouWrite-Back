@@ -4,8 +4,8 @@ import {ProductsUseCase} from './products.UseCase'
 export class ItensController{
     async registerProduct(req: Request, res: Response){
     const productsUseCase  = new ProductsUseCase();   
-    const {name, description, filter, price} = req.body
-    const result = await productsUseCase.registerProduct({name, description, filter, price})
+    const {name, description, filter, price, urlPicture} = req.body
+    const result = await productsUseCase.registerProduct({name, description, filter, price, urlPicture})
     return res.status(200).json({result, message: "produts was registered"})
     }
 

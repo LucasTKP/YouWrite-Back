@@ -4,14 +4,15 @@ import { prisma } from "../../prisma/client";
 import { deleteProductDTO, registerProductDTO } from "./dtos";
 
 export class ProductsUseCase{
-    async registerProduct({name, description, filter, price}: registerProductDTO): Promise<Products>{
+    async registerProduct({name, description, filter, price, urlPicture}: registerProductDTO): Promise<Products>{
         console.log("description")
         const result = await prisma.products.create({
             data: {
                 name: name,
                 description: description,
                 filter: filter,
-                price: 555.5
+                price: price,
+                urlPicture: urlPicture
             }
         })
         return result

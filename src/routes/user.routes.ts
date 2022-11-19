@@ -4,7 +4,6 @@ import {  UserController } from "../modules/users/userController";
 const userController = new  UserController();
 
 const userRoutes = Router();
-
 userRoutes.post("/create", userController .createUser);
 userRoutes.post("/verify", userController .verifyEmailSignUp);
 userRoutes.get("/:id", userController .selectUserByID);

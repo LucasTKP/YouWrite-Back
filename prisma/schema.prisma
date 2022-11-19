@@ -27,7 +27,7 @@ model Products {
   description String
   filter String
   price Decimal
-  url_picture String
+  urlPicture String
   // author User @relation(fields: [user_id], references: [id])
   // user_id Int
 }
