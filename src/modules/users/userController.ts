@@ -3,6 +3,7 @@ import { UserUseCase} from "./userUseCase";
 var bcrypt = require('bcryptjs');
 
 export class UserController {
+  
   async createUser(req: Request, res: Response) {
     const userUseCase = new UserUseCase();
     const { name, cpf, cep, email, password} = req.body;
@@ -27,13 +28,13 @@ export class UserController {
   async verifyEmailSignUp(req: Request, res: Response) {
     const userUseCase = new UserUseCase();
     const email = req.body.email
-
     const result = await userUseCase.verifyEmailSignUp({email});
     console.log(result)
     return res.status(200).json({code:result, statusVerifyEmail: 200});
   }
 
   async verifyUserLogin(req: Request, res: Response) {
+    console.log("req.body")
     const userUseCase = new UserUseCase();
     const email = req.body.email
     const password = req.body.password
@@ -43,6 +44,7 @@ export class UserController {
   }
 
   async recoveryPassword(req: Request, res: Response) {
+    console.log("req.body")
     const userUseCase = new UserUseCase();
     const email = req.body.email
 

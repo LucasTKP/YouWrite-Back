@@ -3,6 +3,7 @@ export interface registerProductDTO{
     description: string;
     filter: string;
     price: number;
+    urlPicture: string;
 }
 
 export interface deleteProductDTO{
